@@ -1,0 +1,39 @@
+@startuml
+title Human Pose Estimation Workflow
+
+start
+:Input Image/Video;
+
+partition Preprocessing {
+  :Resize Image;
+  :Normalize Pixel Values;
+  :Data Augmentation;
+}
+
+partition Feature Extraction {
+  :Convolutional Neural Network (CNN);
+  :Extract Key Features;
+}
+
+partition Pose Estimation Model {
+  :Predict Keypoints (Joints);
+  :Heatmap Generation;
+}
+
+partition Postprocessing {
+  :Refine Keypoints;
+  :Connect Keypoints to Form Skeleton;
+}
+
+:Output Pose (Skeleton);
+stop
+
+@enduml
+
+' To export this diagram as PNG or SVG:
+' 1. Use a PlantUML editor (e.g., PlantUML plugin in VS Code, IntelliJ, or an online editor like PlantText).
+' 2. Run the PlantUML rendering command to generate the diagram.
+' 3. Save the output as PNG or SVG from the editor.
+' Alternatively, use the PlantUML command-line tool:
+'    java -jar plantuml.jar -tpng human_pose_estimation.puml  (for PNG)
+'    java -jar plantuml.jar -tsvg human_pose_estimation.puml  (for SVG)
