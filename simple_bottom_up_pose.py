@@ -61,30 +61,47 @@ class ScaleAwareHeatmapGenerator:
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
 
-    # Example: generate a heatmap for a single person with 3 keypoints
     output_res = 64
-    num_joints = 3
+    num_joints = 17
     generator = ScaleAwareHeatmapGenerator(output_res, num_joints)
 
-    # Example keypoints: (x, y, v, sigma)
-    # v=1 means visible, v=0 means not visible
+    # Example: synthetic keypoints for a single person (COCO order)
+    # (x, y, v, sigma) for each keypoint
     joints = np.array([
         [
-            [32, 16, 1, 2],  # keypoint 1
-            [48, 48, 1, 4],  # keypoint 2
-            [16, 48, 1, 3],  # keypoint 3
+            [32, 8, 1, 2],   # nose
+            [36, 6, 1, 2],   # left eye
+            [28, 6, 1, 2],   # right eye
+            [40, 10, 1, 2],  # left ear
+            [24, 10, 1, 2],  # right ear
+            [44, 20, 1, 3],  # left shoulder
+            [20, 20, 1, 3],  # right shoulder
+            [48, 36, 1, 3],  # left elbow
+            [16, 36, 1, 3],  # right elbow
+            [52, 52, 1, 3],  # left wrist
+            [12, 52, 1, 3],  # right wrist
+            [40, 56, 1, 4],  # left hip
+            [24, 56, 1, 4],  # right hip
+            [44, 64, 1, 4],  # left knee
+            [20, 64, 1, 4],  # right knee
+            [48, 60, 1, 4],  # left ankle
+            [16, 60, 1, 4],  # right ankle
         ]
     ])
-    sigmas = [2, 4, 3]  # fallback sigmas if not in pt[3]
-    ct_sigma = 2  # not used here, but required by the call signature
+    sigmas = [2,2,2,2,2,3,3,3,3,3,3,4,4,4,4,4,4]  # Example per-keypoint sigmas
+    ct_sigma = 2  # not used here
 
     heatmaps, _ = generator(joints, sigmas, ct_sigma)
 
-    # Visualize each keypoint's heatmap
-    fig, axes = plt.subplots(1, num_joints, figsize=(12, 4))
+    # Visualize all 17 keypoint heatmaps in a 4x5 grid
+    fig, axes = plt.subplots(4, 5, figsize=(15, 12))
     for i in range(num_joints):
-        axes[i].imshow(heatmaps[i], cmap='hot', interpolation='nearest')
-        axes[i].set_title(f'Keypoint {i+1}')
-        axes[i].axis('off')
+        ax = axes[i//5, i%5]
+        ax.imshow(heatmaps[i], cmap='hot', interpolation='nearest')
+        ax.set_title(f'Keypoint {i+1}')
+        ax.axis('off')
+    # Hide any unused subplots
+    for j in range(num_joints, 20):
+        axes[j//5, j%5].axis('off')
     plt.tight_layout()
     plt.show()
