@@ -1,0 +1,42 @@
+@startuml
+title Expanded Bottom-Up Human Pose Estimation Pipeline
+
+start
+:Input Image;
+
+partition "Preprocessing" {
+  :Resize Image;
+  :Normalize Pixel Values;
+  :Data Augmentation (Rotation, Flipping, Scaling, etc.);
+}
+
+partition "HRNet Architecture" {
+  :Feature Extraction (High-Resolution Features);
+  :Multi-Scale Feature Fusion;
+}
+
+partition "Multi-Scale Training" {
+  :Train on Multiple Resolutions (256x256, 384x384, 512x512);
+  :Curriculum Learning for Scale Variations;
+}
+
+partition "Keypoint Detection" {
+  :Generate Heatmaps for Keypoints;
+  :Refine Heatmaps (Gaussian Smoothing, Non-Max Suppression);
+}
+
+partition "Keypoint Grouping" {
+  :Group Keypoints Using Part Affinity Fields;
+  :Form Skeletons for Each Individual;
+}
+
+partition "Postprocessing" {
+  :Filter Low-Confidence Keypoints;
+  :Handle Missing Keypoints (Interpolation);
+  :Refine Skeletons;
+}
+
+:Output Pose (Skeleton);
+stop
+
+@enduml

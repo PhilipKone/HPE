@@ -1,0 +1,18 @@
+@startuml
+title Enhancing Bottom-Up Human Pose Estimation Pipeline
+
+start
+:Input Image;
+:Preprocessing;
+partition "HRNet Architecture" {
+  :Feature Extraction;
+  :Multi-Scale Feature Fusion;
+}
+:Multi-Scale Training;
+:Keypoint Detection (Heatmap Generation);
+:Keypoint Grouping (Skeleton Formation);
+:Postprocessing;
+:Output Pose (Skeleton);
+stop
+
+@enduml

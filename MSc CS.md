@@ -1,18 +1,18 @@
-# UNIVERSITY OF GHANA  
+# UNIVERSITY OF GHANA
 
-COLLEGE OF BASIC AND APPLIED SCIENCES  
-FACULTY OF PHYSICAL AND MATHEMATICAL SCIENCES  
+COLLEGE OF BASIC AND APPLIED SCIENCES
+FACULTY OF PHYSICAL AND MATHEMATICAL SCIENCES
 
-**ADAPTIVE GAUSSIAN KERNELS FOR SCALE-INVARIANT HEATMAP GENERATION IN BOTTOM-UP FULL BODY POSE ESTIMATION**  
+**ADAPTIVE GAUSSIAN KERNELS FOR SCALE-INVARIANT HEATMAP GENERATION IN BOTTOM-UP FULL BODY POSE ESTIMATION**
 
-BY  
-**PHILIP HOTOR**  
-(ID. NO. 22255127)  
+BY
+**PHILIP HOTOR**
+(ID. NO. 22255127)
 
-A DISSERTATION SUBMITTED TO THE SCHOOL OF GRADUATE STUDIES IN PARTIAL FULFILMENT OF THE AWARD OF DEGREE OF MASTER OF SCIENCE IN COMPUTER SCIENCE  
+A DISSERTATION SUBMITTED TO THE SCHOOL OF GRADUATE STUDIES IN PARTIAL FULFILMENT OF THE AWARD OF DEGREE OF MASTER OF SCIENCE IN COMPUTER SCIENCE
 
-DEPARTMENT OF COMPUTER SCIENCE  
-MONTH 2025  
+DEPARTMENT OF COMPUTER SCIENCE
+MONTH 2025
 
 ---
 
@@ -34,41 +34,11 @@ MONTH 2025
 
 # TABLE OF CONTENTS
 
-1. [Introduction](#introduction)  
-   1.1 [Background of Study](#background-of-study)  
-   1.2 [Problem Statement](#problem-statement)  
-   1.3 [Objectives](#objectives)  
-   1.4 [Outline of Methodology](#outline-of-methodology)  
-   1.5 [Justification](#justification)  
-   1.6 [Outline of Dissertation](#outline-of-dissertation)  
-2. [Literature Review](#literature-review)  
-   2.1 [Introduction](#introduction-1)  
-   2.2 [Objective 1: Design Adaptive Gaussian Kernels](#objective-1-design-adaptive-gaussian-kernels)  
-       2.2.1 [Traditional Methods](#traditional-methods)  
-       2.2.2 [Deep Learning-Based Methods](#deep-learning-based-methods)  
-       2.2.3 [Gaussian Kernels](#gaussian-kernels)  
-   2.3 [Objective 2: Develop an Efficient Learning and Optimization Approach](#objective-2-develop-an-efficient-learning-and-optimization-approach)  
-       2.3.1 [Optimization Techniques](#optimization-techniques)  
-       2.3.2 [Loss Functions](#loss-functions)  
-       2.3.3 [Parameterization Strategies](#parameterization-strategies)  
-   2.4 [Objective 3: Integrate Adaptive Kernels with Bottom-Up Pose Estimation Frameworks](#objective-3-integrate-adaptive-kernels-with-bottom-up-pose-estimation-frameworks)  
-       2.4.1 [Bottom-Up Frameworks](#bottom-up-frameworks)  
-       2.4.2 [Integration Challenges](#integration-challenges)  
-       2.4.3 [Opportunities for Improvement](#opportunities-for-improvement)  
-   2.5 [Summary](#summary)  
-3. [Proposed Methodology](#proposed-methodology)  
-   3.1 [Introduction](#introduction-2)  
-   3.2 [Methodology Based on Objectives](#methodology-based-on-objectives)  
-       3.2.1 [Objective 1: Design and Develop Adaptive Gaussian Kernels](#objective-1-design-and-develop-adaptive-gaussian-kernels)  
-       3.2.2 [Objective 2: Develop an Efficient Learning and Optimization Approach](#objective-2-develop-an-efficient-learning-and-optimization-approach)  
-       3.2.3 [Objective 3: Integrate Adaptive Gaussian Kernels with Bottom-Up Pose Estimation Frameworks](#objective-3-integrate-adaptive-gaussian-kernels-with-bottom-up-pose-estimation-frameworks)  
-4. [Results and Discussion](#results-and-discussion)  
-   4.1 [Initial Model Evaluation](#initial-model-evaluation)  
-   4.2 [Experimental Results](#experimental-results)  
-   4.3 [Discussion of Results](#discussion-of-results)  
-5. [Conclusion and Future Works](#conclusion-and-future-works)  
-   5.1 [Conclusion](#conclusion)  
-   5.2 [Future Works](#future-works)  
+1. [Introduction](#introduction)1.1 [Background of Study](#background-of-study)1.2 [Problem Statement](#problem-statement)1.3 [Objectives](#objectives)1.4 [Outline of Methodology](#outline-of-methodology)1.5 [Justification](#justification)1.6 [Outline of Dissertation](#outline-of-dissertation)
+2. [Literature Review](#literature-review)2.1 [Introduction](#introduction-1)2.2 [Objective 1: Design Adaptive Gaussian Kernels](#objective-1-design-adaptive-gaussian-kernels)2.2.1 [Traditional Methods](#traditional-methods)2.2.2 [Deep Learning-Based Methods](#deep-learning-based-methods)2.2.3 [Gaussian Kernels](#gaussian-kernels)2.3 [Objective 2: Develop an Efficient Learning and Optimization Approach](#objective-2-develop-an-efficient-learning-and-optimization-approach)2.3.1 [Optimization Techniques](#optimization-techniques)2.3.2 [Loss Functions](#loss-functions)2.3.3 [Parameterization Strategies](#parameterization-strategies)2.4 [Objective 3: Integrate Adaptive Kernels with Bottom-Up Pose Estimation Frameworks](#objective-3-integrate-adaptive-kernels-with-bottom-up-pose-estimation-frameworks)2.4.1 [Bottom-Up Frameworks](#bottom-up-frameworks)2.4.2 [Integration Challenges](#integration-challenges)2.4.3 [Opportunities for Improvement](#opportunities-for-improvement)2.5 [Summary](#summary)
+3. [Proposed Methodology](#proposed-methodology)3.1 [Introduction](#introduction-2)3.2 [Methodology Based on Objectives](#methodology-based-on-objectives)3.2.1 [Objective 1: Design and Develop Adaptive Gaussian Kernels](#objective-1-design-and-develop-adaptive-gaussian-kernels)3.2.2 [Objective 2: Develop an Efficient Learning and Optimization Approach](#objective-2-develop-an-efficient-learning-and-optimization-approach)3.2.3 [Objective 3: Integrate Adaptive Gaussian Kernels with Bottom-Up Pose Estimation Frameworks](#objective-3-integrate-adaptive-gaussian-kernels-with-bottom-up-pose-estimation-frameworks)
+4. [Results and Discussion](#results-and-discussion)4.1 [Initial Model Evaluation](#initial-model-evaluation)4.2 [Experimental Results](#experimental-results)4.3 [Discussion of Results](#discussion-of-results)
+5. [Conclusion and Future Works](#conclusion-and-future-works)5.1 [Conclusion](#conclusion)5.2 [Future Works](#future-works)
 6. [References](#references)
 
 # LIST OF FIGURES
@@ -87,98 +57,102 @@ MONTH 2025
 
 ## 1.1 Background of Study
 
-Human pose estimation (HPE) has emerged as a fundamental challenge in computer vision, with far-reaching implications across various domains including healthcare, sports analytics, human-computer interaction, and surveillance systems (Cao et al., 2021; Sun et al., 2019). At its core, HPE involves the detection and localization of human body joints, or keypoints, in images or videos, enabling machines to understand and interpret human movement and posture. This capability has become increasingly crucial as we move towards more sophisticated human-machine interaction systems and automated analysis of human activities.
+Human pose estimation (HPE) has emerged as a fundamental challenge in computer vision, with far-reaching implications across domains such as healthcare, sports analytics, human-computer interaction, and surveillance systems (Cao et al., 2021; Sun et al., 2019). At its core, HPE involves detecting and localizing human body joints (keypoints) in images or videos, enabling machines to interpret and analyze human movement and posture. As we move toward more sophisticated human-machine interaction systems and automated analysis of human activities, the importance of robust and accurate HPE continues to grow.
 
-The evolution of HPE has been marked by significant paradigm shifts, from early rule-based approaches to modern deep learning-based methods. Traditional approaches, such as pictorial structures and deformable part models, relied heavily on handcrafted features and probabilistic models (Wei et al., 2024). These methods, while pioneering, faced inherent limitations in handling the complexity of real-world scenarios, particularly in cases of occlusions, scale variations, and complex poses. The rigid nature of these models often led to poor generalization across different environments and human appearances.
+The evolution of HPE has been marked by significant paradigm shifts, from early rule-based approaches to modern deep learning-based methods. Traditional approaches, such as pictorial structures and deformable part models, relied on handcrafted features and probabilistic models (Wei et al., 2024). While pioneering, these methods faced limitations in handling the complexity of real-world scenarios—especially in cases of occlusion, scale variation, and complex poses—often resulting in poor generalization across diverse environments and human appearances.
 
-The advent of deep learning revolutionized the field of HPE, introducing more robust and flexible approaches. Convolutional Neural Networks (CNNs) enabled the learning of hierarchical feature representations directly from data, significantly improving the accuracy and robustness of pose estimation (Sun et al., 2019; Li et al., 2023). This led to the development of two primary approaches: top-down and bottom-up methods. Top-down approaches, exemplified by methods like Mask R-CNN and HRNet, first detect human bounding boxes and then estimate keypoints within each box (Cheng et al., 2020). While these methods achieve high accuracy, they face challenges in crowded scenes due to overlapping bounding boxes and high computational costs.
+With the advent of deep learning, HPE experienced a revolution. Convolutional Neural Networks (CNNs) enabled the learning of hierarchical feature representations directly from data, greatly improving the accuracy and robustness of pose estimation (Sun et al., 2019; Li et al., 2023). This progress led to two primary methodological paradigms: top-down and bottom-up approaches. Top-down methods, such as Mask R-CNN and HRNet, first detect human bounding boxes and then estimate keypoints within each box (Cheng et al., 2020). While highly accurate, these approaches can struggle in crowded scenes due to overlapping bounding boxes and increased computational cost.
 
-In contrast, bottom-up approaches, such as OpenPose (Cao et al., 2021) and HigherHRNet (Cheng et al., 2020), detect all keypoints in an image and then group them into individual poses. These methods offer better scalability and efficiency, making them more suitable for real-time applications and crowded scenes. However, they face their own set of challenges, particularly in accurately associating keypoints and handling scale variations across different individuals in the same scene (Du & Yu, 2022; Yu et al., 2022).
+Bottom-up approaches, including OpenPose (Cao et al., 2021), HigherHRNet (Cheng et al., 2020), and more recently DEKR, detect all keypoints in an image first and then group them into individual poses. These methods offer superior scalability and efficiency, making them well-suited for real-time applications and crowded environments. However, they also face challenges, particularly in the accurate association of keypoints and in handling significant scale variation among individuals in the same scene (Du & Yu, 2022; Yu et al., 2022).
 
-A critical component of modern HPE systems is the generation of heatmaps, which represent the likelihood of keypoint locations in an image. Traditional heatmap generation methods rely on fixed Gaussian kernels, which assume a constant scale and orientation for all keypoints (Luo et al., 2021). This assumption proves problematic in real-world scenarios where humans appear at different scales and orientations due to perspective distortions and varying camera angles. Fixed kernels often fail to capture fine-grained spatial details, leading to inaccurate keypoint localization, particularly for small or occluded body parts (Gu et al., 2020; Wei et al., 2024).
+A central technical component of HPE systems is heatmap generation, which represents the likelihood of keypoint locations in an image. Traditional heatmap generation relies on fixed Gaussian kernels, assuming constant scale and orientation for all keypoints (Luo et al., 2021). This assumption is problematic in real-world scenarios, where people appear at different scales and orientations due to perspective and camera angle. As a result, fixed kernels can miss fine-grained spatial details, leading to inaccurate localization—especially for small or occluded body parts (Gu et al., 2020; Wei et al., 2024).
 
-Recent research has highlighted the importance of scale-aware approaches in HPE. Studies by Yu et al. (2022) and Du & Yu (2022) have demonstrated the effectiveness of adaptive Gaussian kernels that can dynamically adjust their parameters based on the local context. These approaches have shown promising results in handling scale variations and improving keypoint localization accuracy. However, the integration of such adaptive approaches into existing bottom-up frameworks remains a significant challenge, particularly in terms of maintaining real-time performance while improving accuracy (Li & Wang, 2022; Kamel et al., 2021).
+Recent research has emphasized the need for scale-aware and adaptive approaches. Notably, Han Yu et al. (2022) introduced the Scale-Aware Heatmap Generator (SAHG), which customizes the Gaussian kernel variance based on the relative scale of each keypoint. This adaptive approach allows heatmaps to more accurately represent keypoints of varying sizes and has demonstrated improved localization accuracy, particularly in complex, multi-scale, and crowded environments. However, integrating such adaptive Gaussian kernels into high-performance bottom-up frameworks—such as DEKR, which is known for its state-of-the-art accuracy and efficiency—remains an open research challenge, especially when balancing real-time performance and accuracy (Li & Wang, 2022; Kamel et al., 2021).
 
-The need for more robust and efficient HPE systems has become increasingly apparent in various applications. In healthcare, accurate pose estimation is crucial for patient monitoring and rehabilitation tracking (Lee et al., 2024). In sports analytics, it enables detailed movement analysis and performance evaluation (Zhang et al., 2020). In human-computer interaction, it forms the basis for natural and intuitive interfaces (Park & Park, 2021). These applications demand not only high accuracy but also real-time performance and robustness to various environmental conditions.
+This thesis is among the first to address this gap by designing and implementing adaptive Gaussian kernels inspired by SAHG and integrating them directly into the DEKR framework. By doing so, it aims to advance the state of the art in bottom-up pose estimation, achieving scale-invariant, robust, and efficient keypoint localization. This integration not only addresses a critical challenge in the literature but also paves the way for more accurate and practical applications of HPE in real-world scenarios.
 
-This research builds upon these developments by focusing on the design and implementation of adaptive Gaussian kernels for scale-invariant heatmap generation in bottom-up full-body pose estimation. The proposed approach aims to address the limitations of current methods by developing kernels that can dynamically adjust to varying scales and orientations while maintaining computational efficiency (Yu et al., 2022; Du & Yu, 2022). By integrating these adaptive kernels with existing bottom-up frameworks, this research seeks to enhance the accuracy and robustness of HPE systems in complex, real-world environments.
-
-The significance of this research extends beyond technical improvements in HPE. By developing more accurate and robust pose estimation systems, we can enable more sophisticated applications in various domains. This includes improved healthcare monitoring systems, more accurate sports analytics, and more natural human-computer interaction (Cao et al., 2021; Sun et al., 2019). Furthermore, the insights gained from this research could inform the development of other computer vision tasks that face similar challenges with scale variations and occlusions (Luo et al., 2021; Li & Wang, 2022).
+The following section details the specific problem statement motivating this research.
 
 ## 1.2 Problem Statement
 
-Human pose estimation (HPE) in crowded scenes presents significant challenges due to scale variations, occlusions, and orientation ambiguities (Wei et al., 2024; Gu et al., 2020). While bottom-up approaches, which detect all keypoints in an image and group them into individual poses, offer computational efficiency and scalability (Cao et al., 2021; Cheng et al., 2020), their performance is hindered by the limitations of fixed Gaussian kernels used in heatmap generation (Luo et al., 2021; Yu et al., 2022). These limitations manifest in several critical ways that impact the effectiveness of pose estimation systems in real-world scenarios.
+Despite significant advances in human pose estimation (HPE), current bottom-up frameworks continue to face major challenges in accurately localizing keypoints under conditions of scale variation, occlusion, and orientation ambiguity. Traditional heatmap generation methods, which rely on fixed Gaussian kernels, are fundamentally limited in their ability to adapt to the diverse scales and shapes of human figures encountered in real-world images (Luo et al., 2021; Wei et al., 2024). This limitation is particularly pronounced in crowded scenes, where individuals may appear at vastly different sizes and orientations due to perspective effects and camera angles.
 
-The inability of fixed Gaussian kernels to adapt to varying human scales results in inaccurate localization of smaller or distant keypoints (Du & Yu, 2022), particularly in crowded scenes where individuals appear at different distances from the camera (Li & Wang, 2022). This scale variance is compounded by orientation ambiguity, as current methods struggle to account for diverse body orientations, especially in complex poses and crowded environments where body parts may appear at various angles (Gu et al., 2020; Park & Park, 2021). Furthermore, overlapping body parts in crowded scenes exacerbate errors, as fixed kernels cannot dynamically adjust to the spatial context (Wei et al., 2024), significantly impacting the accuracy of pose estimation in real-world scenarios (Kamel et al., 2021).
+The inability of fixed Gaussian kernels to dynamically adjust to varying person sizes and keypoint scales results in suboptimal localization, especially for small, distant, or partially occluded body parts (Du & Yu, 2022; Li & Wang, 2022). As a consequence, bottom-up approaches—despite their computational efficiency and scalability—often struggle to deliver robust performance in complex, real-world environments where scale and orientation vary widely (Gu et al., 2020; Park & Park, 2021).
 
-These limitations have profound implications for applications requiring precise joint localization, such as human-computer interaction, sports analytics, and healthcare monitoring (Lee et al., 2024; Zhang et al., 2020). The inability to adapt to varying scales and orientations reduces the effectiveness of bottom-up frameworks in complex environments (Sun et al., 2019; Li et al., 2023), limiting their practical utility in real-world applications. While adaptive Gaussian kernels have been proposed as a potential solution (Yu et al., 2022; Du & Yu, 2022), their integration into existing HPE frameworks remains underexplored, presenting several key challenges that need to be addressed.
+Recent research has proposed adaptive, scale-aware Gaussian kernels as a promising solution to these challenges (Yu et al., 2022; Han Yu et al., 2022). However, the integration of such adaptive kernels into state-of-the-art bottom-up frameworks, such as DEKR, remains underexplored. Key technical challenges persist, including the need for efficient parameter learning strategies, the design of effective loss functions for adaptive kernel training, and the maintenance of real-time inference speed without sacrificing localization accuracy.
 
-Current approaches lack comprehensive solutions for handling varying person sizes and keypoint scales in heatmap generation (Luo et al., 2021), and efficient learning strategies and optimization techniques for heatmap generation need further development to balance accuracy and computational efficiency (Li & Wang, 2022). Additionally, the integration of adaptive kernels with bottom-up frameworks while maintaining high-resolution features and real-time performance requires novel approaches (Cheng et al., 2020; Cao et al., 2021). This research addresses these challenges by developing a novel adaptive Gaussian kernel approach for scale-invariant heatmap generation in bottom-up full-body pose estimation, aiming to enhance the accuracy and robustness of HPE systems in crowded and complex real-world scenarios while maintaining computational efficiency and real-time performance.
+Therefore, the core problem addressed in this research is:  
+**How can adaptive, scale-aware Gaussian kernels be effectively integrated into a high-performance bottom-up pose estimation framework (DEKR) to achieve robust, scale-invariant, and efficient keypoint localization in complex, real-world scenarios?**  
+This research aims to fill this gap by developing and evaluating a novel adaptive kernel design and integration strategy, with the goal of advancing the accuracy and practical applicability of bottom-up HPE systems.
 
 ## 1.3 Objectives
 
 The main objectives of this research are:
 
-1. **Design scale-aware adaptive Gaussian kernels** for handling varying person sizes and keypoint scales in heatmap generation, ensuring robust pose estimation across different scales and scenarios.
-2. **Develop efficient learning strategies and optimization techniques** for heatmap generation, including novel loss functions and parameter optimization methods to improve the accuracy and efficiency of pose estimation.
-3. **Integrate adaptive Gaussian kernels with bottom-up frameworks** while maintaining high-resolution features and real-time performance, ensuring practical applicability in real-world scenarios.
+1. **To design and implement scale-aware adaptive Gaussian kernels** for heatmap generation in human pose estimation, enabling robust localization of keypoints across varying person sizes, scales, and orientations.
+2. **To integrate these adaptive Gaussian kernels into the DEKR bottom-up pose estimation framework**, ensuring compatibility with high-resolution feature extraction and maintaining real-time inference performance.
+3. **To develop efficient learning strategies and optimization techniques**—including novel loss functions and parameterization methods—for training adaptive kernels, with the goal of improving both the accuracy and computational efficiency of the overall pose estimation system.
 
 ## 1.4 Outline of Methodology
 
-The methodology for this research is structured around three key objectives, each addressing specific challenges in bottom-up full-body pose estimation. The steps involved are as follows:
+The methodology of this research is structured to address the three primary objectives, with each phase building upon the previous to ensure a systematic and rigorous approach to integrating adaptive Gaussian kernels into the DEKR framework for human pose estimation. The main steps are as follows:
 
-1. **Designing Scale-Aware Adaptive Gaussian Kernels**:
+1. **Designing Scale-Aware Adaptive Gaussian Kernels**  
+   - Develop a parametric Gaussian kernel function that dynamically adjusts its size and shape based on person instance scale and keypoint characteristics.
+   - Implement scale-aware and orientation-aware components to enhance robustness across diverse poses, scales, and camera angles.
+   - Validate the adaptability and effectiveness of the kernel design through both synthetic data and real-world test scenarios.
 
-   - Develop a parametric Gaussian kernel function that dynamically adjusts its size and shape based on person instance scale and keypoint characteristics
-   - Implement scale-aware parameters to handle varying person sizes and keypoint scales in heatmap generation
-   - Design orientation-aware components to improve robustness in diverse poses and camera angles
-   - Validate kernel adaptability through synthetic and real-world test scenarios
-2. **Developing Efficient Learning Strategies and Optimization Techniques**:
+2. **Developing Efficient Learning Strategies and Optimization Techniques**  
+   - Design novel loss functions and parameterization schemes specifically tailored for adaptive heatmap generation.
+   - Implement optimization methods that balance accuracy and computational efficiency, including multi-stage training pipelines for progressive refinement of kernel parameters.
+   - Evaluate learning efficiency and model convergence using established performance metrics.
 
-   - Design novel loss functions specifically tailored for heatmap generation and optimization
-   - Implement parameter optimization methods that balance accuracy and computational efficiency
-   - Develop a multi-stage training pipeline to progressively refine kernel parameters
-   - Evaluate learning efficiency through convergence analysis and performance metrics
-3. **Integrating with Bottom-Up Frameworks**:
-
-   - Select and adapt a suitable bottom-up pose estimation framework as the baseline
-   - Integrate the adaptive Gaussian kernels while maintaining high-resolution features
-   - Optimize the framework for real-time performance in practical applications
-   - Conduct comprehensive evaluation on benchmark datasets (COCO, MPII) focusing on:
+3. **Integration and Evaluation within the DEKR Bottom-Up Framework**  
+   - Select and adapt the DEKR framework as the baseline for bottom-up pose estimation.
+   - Integrate the adaptive Gaussian kernel module while preserving high-resolution feature extraction and maintaining real-time inference capabilities.
+   - Conduct comprehensive experiments on benchmark datasets (e.g., COCO, MPII), focusing on:
      - Scale adaptability and robustness
      - Pose estimation accuracy
      - Computational efficiency and real-time performance
-     - Comparison with state-of-the-art methods
+     - Comparative analysis with fixed-kernel baselines and state-of-the-art methods
 
 The methodology follows an iterative approach, with each phase building upon the results of the previous one. This ensures continuous refinement and validation of the proposed methods while maintaining focus on practical applicability in real-world scenarios.
 
 ## 1.5 Justification
 
-The development of adaptive Gaussian kernels for scale-invariant heatmap generation in bottom-up pose estimation is justified by several critical factors that span both theoretical and practical domains. Recent research has demonstrated that traditional fixed Gaussian kernels significantly limit the performance of pose estimation systems in real-world scenarios (Luo et al., 2021; Yu et al., 2022). This limitation becomes particularly evident in crowded scenes and complex environments where scale variations and occlusions are prevalent (Wei et al., 2024; Gu et al., 2020).
+The justification for this research lies in both the theoretical advancement of human pose estimation (HPE) methodologies and the practical need for robust, real-time systems in complex, real-world environments.
 
-From a theoretical perspective, this research contributes to advancing the fundamental understanding of heatmap generation in human pose estimation. The proposed adaptive approach addresses a critical gap in current methodologies by developing kernels that can dynamically adjust to varying scales and orientations (Du & Yu, 2022; Li & Wang, 2022). This advancement builds upon recent work in scale-aware pose estimation (Cao et al., 2021; Cheng et al., 2020) while introducing novel optimization techniques for heatmap generation (Sun et al., 2019; Li et al., 2023).
+From a theoretical perspective, this research addresses a critical gap in the literature by developing and integrating scale-aware adaptive Gaussian kernels into a state-of-the-art bottom-up framework (DEKR). Traditional fixed Gaussian kernels are fundamentally limited in their ability to adapt to varying person sizes, orientations, and occlusion scenarios, leading to suboptimal keypoint localization—especially in crowded or multi-scale settings (Luo et al., 2021; Wei et al., 2024). By building on recent advances such as the Scale-Aware Heatmap Generator (SAHG) (Han Yu et al., 2022), this work proposes a novel kernel design that dynamically adjusts its parameters based on local context, thus enhancing the accuracy and robustness of heatmap-based pose estimation (Du & Yu, 2022; Li & Wang, 2022).
 
-The practical significance of this research is evident in its potential applications across multiple domains. In healthcare, accurate pose estimation is crucial for patient monitoring and rehabilitation tracking (Lee et al., 2024), while in sports analytics, it enables detailed movement analysis and performance evaluation (Zhang et al., 2020). The development of more robust pose estimation systems also has significant implications for human-computer interaction and surveillance applications (Park & Park, 2021; Kamel et al., 2021).
+Practically, the integration of adaptive Gaussian kernels into the DEKR framework directly addresses the need for efficient, scalable, and accurate pose estimation in applications such as healthcare (for patient monitoring and rehabilitation), sports analytics (for movement analysis and performance evaluation), human-computer interaction, and surveillance (Lee et al., 2024; Zhang et al., 2020; Park & Park, 2021; Kamel et al., 2021). Bottom-up approaches like DEKR are favored for their computational efficiency and real-time performance, but their effectiveness is currently constrained by limitations in handling scale variation and occlusion. This research bridges that gap by enabling adaptive, context-aware heatmap generation without sacrificing speed or scalability.
 
-The integration of adaptive Gaussian kernels with bottom-up frameworks addresses a critical need for real-time performance in practical applications. While bottom-up approaches offer computational efficiency and scalability (Cao et al., 2021), their current limitations in handling scale variations and occlusions hinder their effectiveness in real-world scenarios (Wei et al., 2024). This research aims to bridge this gap by developing solutions that maintain computational efficiency while improving accuracy and robustness (Li & Wang, 2022; Du & Yu, 2022).
+Moreover, the methodological innovations proposed in this work—such as new loss functions, optimization strategies, and kernel parameterization—have broader implications for other computer vision tasks that require precise spatial localization, including object detection and image segmentation (Gu et al., 2020; Luo et al., 2021).
 
-Furthermore, the proposed methodology has broader implications for computer vision research. The insights gained from developing adaptive kernels for pose estimation could inform the development of similar approaches in related tasks such as object detection and image segmentation (Luo et al., 2021). The optimization techniques developed for heatmap generation may also find applications in other areas of computer vision that require precise spatial localization (Gu et al., 2020).
-
-In summary, this research is justified by its potential to advance both theoretical understanding and practical applications of human pose estimation. By addressing critical challenges in scale variation, orientation ambiguity, and occlusion handling, while maintaining computational efficiency, this work contributes to the development of more robust and practical pose estimation systems for real-world applications.
+In summary, this research is justified by its potential to advance both the theoretical understanding and practical deployment of robust, scale-invariant pose estimation systems. By addressing the intertwined challenges of scale variation, orientation ambiguity, and computational efficiency, this work contributes to the development of next-generation HPE systems capable of reliable operation in real-world scenarios.
 
 ## 1.6 Outline of Dissertation
 
 This dissertation is organized into six chapters, each addressing a specific aspect of the research:
 
-1. **Chapter 1 - Introduction**:This chapter introduces the research topic, providing the background, problem statement, objectives, and justification for the study. It also outlines the methodology and structure of the dissertation.
-2. **Chapter 2 - Literature Review**:This chapter reviews existing literature on human pose estimation, Gaussian kernels, and deep learning-based methods. It highlights the limitations of current approaches and identifies research gaps that this study aims to address.
-3. **Chapter 3 - Proposed Methodology**:This chapter details the methodology used to achieve the research objectives. It describes the design of adaptive Gaussian kernels, the development of an efficient learning and optimization approach, and the integration of these kernels into bottom-up pose estimation frameworks.
-4. **Chapter 4 - Results and Discussion**:This chapter presents the results of the experiments conducted to evaluate the proposed methodology. It includes an analysis of the initial model evaluation, experimental results, and a discussion of the findings in relation to the research objectives.
-5. **Chapter 5 - Conclusion and Future Works**:This chapter summarizes the key findings and contributions of the research. It also discusses the limitations of the study and proposes directions for future research.
-6. **References and Appendices**:  
-   The dissertation concludes with a list of references cited throughout the document and appendices containing supplementary materials, such as datasets, code snippets, or additional experimental results.
+1. **Chapter 1 – Introduction:**  
+   Introduces the research topic, providing the background, problem statement, objectives, justification, and an overview of the methodology and dissertation structure.
 
-This structure ensures a logical flow of information, guiding the reader from the research context and objectives to the methodology, results, and conclusions.
+2. **Chapter 2 – Literature Review:**  
+   Reviews existing literature on human pose estimation, Gaussian kernels, and deep learning-based methods. Highlights the limitations of current approaches and identifies research gaps addressed by this study.
+
+3. **Chapter 3 – Proposed Methodology:**  
+   Details the methodology used to achieve the research objectives, including the design of adaptive Gaussian kernels, development of efficient learning and optimization approaches, and integration into the DEKR bottom-up framework.
+
+4. **Chapter 4 – Results and Discussion:**  
+   Presents the experimental results and evaluation of the proposed methodology. Includes analysis of model performance, comparison with baselines, and discussion of findings in relation to the research objectives.
+
+5. **Chapter 5 – Conclusion and Future Works:**  
+   Summarizes the key findings and contributions, discusses the limitations of the study, and proposes directions for future research.
+
+6. **References and Appendices:**  
+   Concludes with a comprehensive list of references and appendices containing supplementary materials such as datasets, code snippets, or additional experimental results.
+
+This structure ensures a logical progression from context and motivation, through methodology and results, to conclusions and future directions, providing the reader with a clear and coherent understanding of the research.
 
 # Chapter 2 - Literature Review
 
@@ -205,6 +179,37 @@ Top-down approaches, exemplified by methods like Mask R-CNN and HRNet, first det
 In contrast, bottom-up approaches, such as OpenPose (Cao et al., 2021) and HigherHRNet (Cheng et al., 2020), detect all keypoints in an image and then group them into individual poses. These methods offer better scalability and efficiency, making them more suitable for real-time applications and crowded scenes. However, they face challenges in accurately associating keypoints and handling scale variations across different individuals in the same scene (Du & Yu, 2022; Yu et al., 2022).
 
 ### 2.2.3 Gaussian Kernels
+
+Gaussian kernels have become the de facto standard for generating heatmaps in human pose estimation tasks. In this context, each keypoint is represented as a 2D Gaussian distribution centered at its ground-truth location, with the heatmap intensity at each pixel reflecting the likelihood of the keypoint’s presence. Mathematically, the value at pixel $(x, y)$ for keypoint $i$ is typically defined as:
+
+$$
+H_i(x, y) = \exp\left(-\frac{(x - x_i)^2 + (y - y_i)^2}{2\sigma^2}\right)
+$$
+
+where $(x_i, y_i)$ is the ground-truth keypoint location and $\sigma$ is the standard deviation controlling the spread of the Gaussian.
+
+#### Limitations of Fixed Gaussian Kernels
+
+While fixed Gaussian kernels are simple and effective for representing keypoint uncertainty, they are fundamentally limited in their ability to handle the diversity of human scales and poses present in real-world images (Luo et al., 2021; Wei et al., 2024). Specifically:
+
+- **Scale Sensitivity:** A single, fixed \(\sigma\) value cannot accommodate both large and small person instances in the same image, leading to poor localization for small or distant keypoints and excessive overlap for large-scale keypoints.
+- **Occlusion and Crowding:** In crowded scenes, fixed kernels often result in overlapping heatmaps, making it difficult to distinguish between closely spaced keypoints (Gu et al., 2020).
+- **Orientation and Aspect Ratio:** Fixed, isotropic kernels do not account for the orientation or aspect ratio of body parts, further limiting localization accuracy in complex poses.
+
+#### Adaptive and Scale-Aware Kernels
+
+To address these limitations, recent research has proposed adaptive or scale-aware Gaussian kernels, where the spread ($\sigma$) and potentially the shape of the kernel are dynamically determined based on local context (Yu et al., 2022; Han Yu et al., 2022). One notable approach is the Scale-Aware Heatmap Generator (SAHG), which sets the variance of the Gaussian according to the estimated scale of the person or keypoint, allowing the heatmap to more accurately reflect spatial uncertainty across a range of scales:
+
+$$
+\sigma^2_i = \max(s_i, s_{thr}) \cdot \frac{\sigma^2}{s_{thr}}
+$$
+
+where $s_i$ is the estimated scale for keypoint $i$ and $s_{thr}$ is a threshold parameter (Han Yu et al., 2022).
+
+Adaptive kernels have been shown to improve keypoint localization, especially in challenging scenarios involving scale variation, occlusion, and crowding. However, their integration into high-performance, real-time bottom-up frameworks remains an open research challenge (Li & Wang, 2022; Kamel et al., 2021).
+
+**Critical Gap:**  
+Despite their promise, adaptive Gaussian kernels are not yet widely adopted in state-of-the-art bottom-up systems like DEKR. Most existing frameworks still rely on fixed kernels, limiting their robustness in real-world applications. This research aims to bridge this gap by designing and integrating scale-aware adaptive Gaussian kernels into the DEKR framework, with the goal of achieving scale-invariant and robust pose estimation.
 
 Gaussian kernels play a crucial role in heatmap generation for human pose estimation. Traditional approaches use fixed Gaussian kernels that assume a constant scale and orientation for all keypoints (Luo et al., 2021). This assumption proves problematic in real-world scenarios where humans appear at different scales and orientations due to perspective distortions and varying camera angles.
 
@@ -333,7 +338,105 @@ These findings directly inform the proposed methodology outlined in Chapter 3. T
 
 The literature review has also highlighted the importance of maintaining a balance between accuracy and efficiency, particularly for real-world applications. This balance will be a key consideration in the design and implementation of the proposed methodology, ensuring that the developed solutions are both theoretically sound and practically applicable.
 
-# Chapter 3 - Proposed Methodology
+# Chapter 3 – Proposed Methodology
+
+## 3.1 Overview of the Proposed Pipeline
+
+The proposed pipeline for integrating adaptive Gaussian kernels into bottom-up full-body pose estimation is designed to address the research objectives through the following stages:
+
+1. **Input Preprocessing:**  
+   Raw images from benchmark datasets (e.g., COCO, MPII) are normalized and augmented (scaling, rotation, flipping).
+2. **Scale and Orientation Estimation:**  
+   For each person instance or keypoint, estimate the scale (e.g., bounding box size or keypoint spread) and, if applicable, orientation.  
+   - Let $s_i$ denote the estimated scale for keypoint $i$.
+   - Let $\theta_i$ denote the estimated orientation (if used).
+3. **Adaptive Heatmap Generation:**  
+   Ground-truth heatmaps are generated using adaptive Gaussian kernels, where kernel parameters are set per keypoint:
+   $$
+   H_i(x, y) = \exp\left(-\frac{1}{2}
+   \begin{bmatrix}
+   x - x_i \\
+   y - y_i
+   \end{bmatrix}^T
+   \Sigma_i^{-1}
+   \begin{bmatrix}
+   x - x_i \\
+   y - y_i
+   \end{bmatrix}
+   \right)
+   $$
+   - For isotropic (scale-aware) kernels:
+     $$
+     \Sigma_i = \sigma_i^2 I
+     $$
+     $$
+     \sigma_i^2 = \max(s_i, s_{thr}) \cdot \frac{\sigma^2}{s_{thr}}
+     $$
+   - For anisotropic (orientation-aware) kernels (optional):
+     $$
+     \Sigma_i = R(\theta_i)
+     \begin{bmatrix}
+     \sigma_{i,x}^2 & 0 \\
+     0 & \sigma_{i,y}^2
+     \end{bmatrix}
+     R(\theta_i)^T
+     $$
+     where $R(\theta_i)$ is the 2D rotation matrix for angle $\theta_i$.
+4. **Network Architecture (Modified DEKR):**  
+   - Input preprocessed images into the DEKR backbone.
+   - The network is trained to regress adaptive heatmaps as defined above.
+5. **Loss Function and Optimization:**  
+   - Use a loss function comparing predicted heatmaps $\hat{H}_i(x, y)$ to ground-truth adaptive heatmaps $H_i(x, y)$:
+     $$
+     \mathcal{L}_{heatmap} = \frac{1}{N} \sum_{i=1}^N \sum_{x,y} w_i(x, y) \left( \hat{H}_i(x, y) - H_i(x, y) \right)^2
+     $$
+     where $w_i(x, y)$ is a weighting term (e.g., to emphasize small keypoints or handle class imbalance).
+6. **Keypoint Grouping and Post-processing:**  
+   - Extract keypoint locations from predicted heatmaps.
+   - Group keypoints into person instances using DEKR’s associative embedding, accounting for variable kernel sizes.
+7. **Evaluation:**  
+   - Evaluate the pipeline using standard metrics (AP, AR, computational efficiency) on benchmark datasets.
+   - Compare results with fixed-kernel and state-of-the-art baselines.
+
+**Pipeline Diagram (suggested for your thesis):**
+```
+Input Image
+    ↓
+Preprocessing & Augmentation
+    ↓
+Scale/Orientation Estimation
+    ↓
+Adaptive Heatmap Generation (GT)
+    ↓
+Modified DEKR Network (Training)
+    ↓
+Predicted Adaptive Heatmaps
+    ↓
+Keypoint Extraction & Grouping
+    ↓
+Evaluation
+```
+
+## 3.2 Methodology Aligned with Research Objectives
+
+### 3.2.1 Objective 1: Design of Adaptive Gaussian Kernels
+- Technical details, equations, and rationale for adaptive kernel design.
+- Mathematical formulation for both isotropic and anisotropic kernels as presented above.
+- Discussion of parameter selection and computational considerations.
+
+### 3.2.2 Objective 2: Learning and Optimization Strategies
+- Details on generating ground-truth heatmaps using the adaptive kernels.
+- Description of the loss function:
+  $$
+  \mathcal{L}_{heatmap} = \frac{1}{N} \sum_{i=1}^N \sum_{x,y} w_i(x, y) \left( \hat{H}_i(x, y) - H_i(x, y) \right)^2
+  $$
+- Optimization techniques (e.g., Adam, learning rate scheduling).
+- Multi-stage training pipeline if applicable.
+
+### 3.2.3 Objective 3: Integration with DEKR and Evaluation
+- Modifications to the DEKR architecture for adaptive kernel integration.
+- Post-processing and keypoint grouping strategies accounting for variable kernel sizes.
+- Evaluation protocol: datasets, metrics (AP, AR, efficiency), and comparison to baselines.
 
 ## 3.1 Introduction
 
@@ -397,22 +500,43 @@ The adaptive kernel generation components section details the core parameters of
 
 ### 3.2.1 Objective 1: Design and Develop Adaptive Gaussian Kernels
 
-The design of adaptive Gaussian kernels focuses on developing a parametric function that can dynamically adjust its parameters based on the local context. This approach builds upon recent work in scale-aware pose estimation (Yu et al., 2022; Du & Yu, 2022) while introducing novel elements to address specific challenges identified in the literature review.
+The design of adaptive Gaussian kernels in this dissertation is directly informed by the Scale-Aware Heatmap Generator (SAHG) proposed by Han Yu, Congju Du, and Li Yu (2022). Their method customizes the variance of the Gaussian kernel for each keypoint type according to its relative scale, rather than using a fixed variance for all keypoints. Specifically, the variance for each keypoint is determined as:
+
+$$
+\sigma^2_i = \max(s_i, s_{thr}) \cdot \frac{\sigma^2}{s_{thr}}
+$$
+
+where $s_i$ is the relative scale for keypoint type $i$ and $s_{thr}$ is a minimum threshold. This adaptive approach ensures the generated heatmaps more accurately reflect the spatial uncertainty and size of each keypoint, improving localization accuracy, particularly for small or large keypoints. In this work, only the SAHG component (adaptive kernel generation) is adopted, while the weight-redistributed loss and other auxiliary methods from the original paper are not central to the proposed contribution. This adaptation is integrated into the DEKR framework to enable robust benchmarking and evaluation against fixed-kernel baselines.
 
 #### 3.2.1.1 Kernel Design
 
-The adaptive Gaussian kernel is defined by the following parametric function:
+The adaptive Gaussian kernel is defined by the following parametric function (bivariate Gaussian):
 
-G(x,y) = (1 / (2πσ_xσ_y√(1-ρ²))) * 
-         exp(-(1 / (2(1-ρ²))) * 
-         [(x-μ_x)²/σ_x² + (y-μ_y)²/σ_y² - (2ρ(x-μ_x)(y-μ_y))/(σ_xσ_y)])
+$$
+G(x, y) = \frac{1}{2\pi \sigma_x \sigma_y \sqrt{1-\rho^2}} \, \exp\left( -\frac{1}{2(1-\rho^2)} \left[ \frac{(x-\mu_x)^2}{\sigma_x^2} + \frac{(y-\mu_y)^2}{\sigma_y^2} - \frac{2\rho(x-\mu_x)(y-\mu_y)}{\sigma_x \sigma_y} \right] \right )
+$$
 
 where:
-- σ_x, σ_y: Scale parameters that adapt to the person's size
-- ρ: Orientation parameter that adjusts to the body part's orientation
-- μ_x, μ_y: Center coordinates of the keypoint
+- $\sigma_x, \sigma_y$: Scale parameters that adapt to the person's size
+- $\rho$: Orientation (correlation) parameter that adjusts to the body part's orientation
+- $\mu_x, \mu_y$: Center coordinates of the keypoint
+
+For isotropic (scale-aware, orientation-agnostic) kernels:
+- $\sigma_x = \sigma_y = \sigma_i$
+- $\rho = 0$
+- The kernel simplifies to:
+
+$$
+G(x, y) = \frac{1}{2\pi \sigma_i^2} \exp\left( -\frac{(x-\mu_x)^2 + (y-\mu_y)^2}{2\sigma_i^2} \right )
+$$
+
+For anisotropic (orientation-aware) kernels:
+- $\sigma_x$ and $\sigma_y$ are set based on the estimated scale along the principal axes
+- $\rho$ is derived from the orientation of the body part
+- The full bivariate form above is used
 
 The parameters are learned through a neural network that takes as input:
+
 1. Local image features around the keypoint
 2. Person instance scale information
 3. Keypoint type and characteristics
@@ -481,16 +605,17 @@ The learning and optimization approach is designed to efficiently train the adap
 The training process is divided into three stages:
 
 1. **Initialization Stage**:
+
    - Pre-training the scale estimation network
    - Initializing kernel parameters with reasonable defaults
    - Establishing baseline performance metrics
-
 2. **Refinement Stage**:
+
    - Fine-tuning kernel parameters using the proposed loss functions
    - Optimizing the parameter prediction network
    - Validating performance on diverse scenarios
-
 3. **Integration Stage**:
+
    - Training the complete system end-to-end
    - Optimizing for real-time performance
    - Final validation on benchmark datasets
@@ -555,17 +680,18 @@ The integration of adaptive Gaussian kernels with bottom-up frameworks focuses o
 The integration process begins with the selection and adaptation of a suitable base model, following the architectures described in the literature:
 
 1. **Base Model Selection**:
+
    - OpenPose (Cao et al., 2021): Utilizes VGG backbone and Part Affinity Fields
    - HigherHRNet (Cheng et al., 2020): Maintains high-resolution features throughout
    - Analysis of architecture compatibility and performance characteristics
-
 2. **Model Adaptation**:
+
    - Integration of high-resolution feature extraction (Cheng et al., 2020)
    - Modification of Part Affinity Fields for keypoint association (Cao et al., 2021)
    - Implementation of multi-scale feature pyramid
    - Optimization of backbone network for adaptive kernels
-
 3. **Architecture Modifications**:
+
    - Addition of scale-aware feature extraction
    - Integration of parameter prediction network
    - Enhancement of keypoint grouping mechanism
@@ -630,17 +756,18 @@ The integration process begins with the selection and adaptation of a suitable b
 The integration process begins with the selection and adaptation of a suitable base model, following the architectures described in the literature:
 
 1. **Base Model Selection**:
+
    - OpenPose (Cao et al., 2021): Utilizes VGG backbone and Part Affinity Fields
    - HigherHRNet (Cheng et al., 2020): Maintains high-resolution features throughout
    - Analysis of architecture compatibility and performance characteristics
-
 2. **Model Adaptation**:
+
    - Integration of high-resolution feature extraction (Cheng et al., 2020)
    - Modification of Part Affinity Fields for keypoint association (Cao et al., 2021)
    - Implementation of multi-scale feature pyramid
    - Optimization of backbone network for adaptive kernels
-
 3. **Architecture Modifications**:
+
    - Addition of scale-aware feature extraction
    - Integration of parameter prediction network
    - Enhancement of keypoint grouping mechanism
@@ -660,17 +787,18 @@ The implementation will be carried out using PyTorch, with careful attention to:
 The evaluation strategy includes:
 
 1. **Quantitative Metrics**:
+
    - Mean Average Precision (mAP)
    - Percentage of Correct Keypoints (PCK)
    - Computational efficiency metrics
    - Memory usage statistics
-
 2. **Qualitative Analysis**:
+
    - Visual inspection of heatmap quality
    - Performance in challenging scenarios
    - Robustness to scale variations
-
 3. **Comparative Studies**:
+
    - Comparison with baseline methods
    - Ablation studies of different components
    - Analysis of trade-offs between accuracy and efficiency
@@ -689,9 +817,9 @@ This section presents the initial evaluation of the proposed model using benchma
 
 The experimental results are summarized as follows:
 
-- **Scale Adaptability**: The adaptive Gaussian kernels achieved a scale adaptability of 85%, exceeding the target of 80%.  
-- **Pose Estimation Accuracy**: The integrated framework demonstrated a 17% improvement in pose estimation accuracy compared to the baseline model.  
-- **Convergence Rate**: The learning and optimization approach achieved a convergence rate of 92% within 100 iterations.  
+- **Scale Adaptability**: The adaptive Gaussian kernels achieved a scale adaptability of 85%, exceeding the target of 80%.
+- **Pose Estimation Accuracy**: The integrated framework demonstrated a 17% improvement in pose estimation accuracy compared to the baseline model.
+- **Convergence Rate**: The learning and optimization approach achieved a convergence rate of 92% within 100 iterations.
 
 ## 4.3 Discussion of Results
 
@@ -707,8 +835,8 @@ This research developed adaptive Gaussian kernels for scale-invariant heatmap ge
 
 Future research directions include:
 
-1. Extending the adaptive Gaussian kernel approach to other computer vision tasks, such as object detection and image segmentation.  
-2. Developing more efficient and scalable algorithms for real-time pose estimation in large-scale datasets.  
+1. Extending the adaptive Gaussian kernel approach to other computer vision tasks, such as object detection and image segmentation.
+2. Developing more efficient and scalable algorithms for real-time pose estimation in large-scale datasets.
 3. Exploring the integration of additional contextual information, such as temporal dynamics, to further enhance pose estimation accuracy.
 
 # References
